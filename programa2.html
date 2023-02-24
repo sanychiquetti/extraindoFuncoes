@@ -1,0 +1,38 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    function desenhaQuadrado(x, y, cor) {
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    pincel.fillStyle = cor; // pego a tinta que aqui entra como parâmetro, para ser definida na repetição 
+    pincel.fillRect(x, y, 50, 50); //como declarei o x e o y, colocar aqui o x e o y
+    pincel.strokeStyle = 'red'; // se quiser cor na borda tem que colocar antes de chamar a função.
+    pincel.fillStroke = 'black'; // aplico uma cor para a borda
+    pincel.strokeRect(x, y, 50, 50);
+    }
+
+    desenhaQuadrado(0, 0, 'Blue');// se quiser colocar 1 embaixo do outro altera o y dos próximos
+    desenhaQuadrado(0, 50, 'green');
+    desenhaQuadrado(0, 100, 'yellow');
+
+
+
+    // aqui fazemmos de forma verbosa...
+    // pincel.fillStyle = 'green'; // pego a tinta
+    // pincel.fillRect(0, 0, 50, 50); //digo onde ele começa e o tamanho dele
+    // pincel.fillStroke = 'black'; // aplico uma cor parra a borda
+    // pincel.strokeRect(0, 0, 50, 50); // aplico a borda coloco a posição e o tamanho dela.
+
+    // pincel.fillRect(50, 0, 50, 50); // proximo quadrado...
+    // pincel.strokeRect(50, 0, 50, 50); // veja que aqui não preciso falar da cor de novo, se a cor for a mesma.
+
+    // pincel.fillRect(100, 0, 50, 50); // proximo quadrado...
+    // pincel.strokeRect(100, 0, 50, 50);
+
+    // pincel.strokeRect(150, 0, 50, 50); // aqui estou colocando uma borda, apesar de não ter o quadrado...
+
+
+</script>
